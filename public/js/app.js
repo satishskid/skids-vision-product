@@ -171,7 +171,7 @@
       [
         ["/frames", "Shop frames"],
         ["/try-on", "Virtual try-on"],
-        ["/#care", "Eye care"],
+        ["/#care", "Why SKIDS"],
         ["/appointment", "Visit the clinic"],
       ]
         .map(function (l) {
@@ -258,13 +258,14 @@
   /* ---------- HOME ---------- */
   function homePage() {
     document.getElementById("footer").innerHTML = footerHTML();
-    app.innerHTML = `<header class="editorial-hero"><div class="hero-copy"><p class="eyebrow">SMALL FRAMES. BIG POSSIBILITIES.</p><h1>A world to see.<br>A pair to <em>love.</em></h1><p>Glasses they feel good in. Eye care you feel good about. Find a little more confidence in every pair.</p><div class="hero-actions"><a class="btn solid" href="#personalities">Find their kind of frame <span>↓</span></a><a class="text-link" data-route href="/appointment">First pair? Start here →</a></div><div class="hero-foot"><span class="tiny-glasses">${frameSvg(FRAMES[2], "#294c3c", 65)}</span><span>Made for growing faces.<br><b>Chosen together, with care.</b></span></div></div><figure class="hero-photo"><img src="/assets/campaign.webp" alt="Campaign portrait of a smiling child wearing round orange glasses" fetchpriority="high" width="1536" height="1024"><figcaption>A little colour. A lot of personality.</figcaption><span class="photo-stamp">LET<br>KIDS<br>BE KIDS.</span></figure></header>
+    app.innerHTML = `<header class="editorial-hero"><div class="hero-copy"><p class="eyebrow">EVERY KID IS SMART. EVERY KID IS SUPER.</p><h1>Big dreams.<br><em>In clear sight.</em></h1><p>A scientist. A doctor. A goal-scorer. Whoever they dream of becoming, we’re here for the eyes that help them discover the way.</p><div class="hero-actions"><a class="btn solid" href="#personalities">Find their kind of frame <span>↓</span></a><a class="text-link" href="#care">Why SKIDS Vision →</a></div><div class="hero-foot"><span class="tiny-glasses">${frameSvg(FRAMES[2], "#294c3c", 65)}</span><span>Their potential is already there.<br><b>Let’s care for what comes next.</b></span></div></div><figure class="hero-photo"><img src="/assets/campaign.webp" alt="Campaign portrait of a smiling child wearing round orange glasses" fetchpriority="high" width="1536" height="1024"><figcaption>A little colour. A lot of personality.</figcaption><span class="photo-stamp">LET<br>KIDS<br>BE KIDS.</span></figure></header>
  <section class="entry-strip wrap" aria-label="Where would you like to start?"><a data-route href="/appointment?reason=screening"><span>01</span><div><b>A note came home from school?</b><small>Let’s make sense of the screening.</small></div><i>↗</i></a><a data-route href="/frames"><span>02</span><div><b>Ready for a new pair?</b><small>Find a look that feels like them.</small></div><i>↗</i></a><a data-route href="/appointment"><span>03</span><div><b>Just want their eyes checked?</b><small>A good place to start.</small></div><i>↗</i></a></section>
+ <section class="belief-strip wrap"><p class="eyebrow">THE SKIDS BELIEF</p><h2>Smart. Super.<br><em>Already.</em></h2><p>They bring the imagination. The courage. The thousand questions. We bring children’s eye care, thoughtfully chosen lenses and a pair that feels like them. So they can get on with being themselves.</p></section>
  ${personaCarouselHTML()}
  <section class="collection-section wrap"><div class="section-heading"><div><p class="eyebrow">KEEP EXPLORING</p><h2>Different days. Different sides of them.</h2></div><a class="text-link" data-route href="/frames">Explore all frames ↗</a></div><div class="age-links"><span>Find their starting size</span><a data-route href="/frames?age=4-7">Little ones <b>4–7</b> ↗</a><a data-route href="/frames?age=8-11">Growing explorers <b>8–11</b> ↗</a><a data-route href="/frames?age=12-14">Finding their own <b>12–14</b> ↗</a></div><div class="home-products">${[FRAMES[2], FRAMES[0], FRAMES[1], FRAMES[7]].map(productCard).join("")}</div><p class="catalog-note">A first look at our collection. Illustrative frames and indicative prices; final fit, availability and lens cost are confirmed with the clinic.</p></section>
- <section class="try-banner wrap"><div class="try-art">${frameSvg(FRAMES[2], "#b1643b", 300)}<span>That’s so <em>you.</em></span><div class="try-colours"><i></i><i></i><i></i><i></i></div></div><div class="try-copy"><p class="eyebrow">A LITTLE DRESS-UP. A BIG DECISION.</p><h2>Let them have<br>the first look.</h2><p>Round and colourful? Quietly classic? Make a shortlist together, then let an optician help with the fit.</p><a class="btn solid" data-route href="/try-on">Explore virtual try-on ↗</a><small>At-home try-on is coming to SKIDS Vision.</small></div></section>
- <section class="care-section" id="care"><div class="wrap care-grid"><div><p class="eyebrow">THE CARE BEHIND THE PAIR</p><h2>You don’t need to<br>know all the answers.<br><em>That’s why we’re here.</em></h2><p>A school report. A first prescription. A pair that keeps slipping. Tell us where you are, and we’ll help with the next step.</p><a class="btn solid" data-route href="/appointment">Plan a clinic visit ↗</a></div><div class="care-steps"><article><span>01 / CHECK</span><h3>Start with their eyes.</h3><p>Bring their screening report or prescription. The clinic can help you understand what it means.</p></article><article><span>02 / CHOOSE</span><h3>Find their kind of comfortable.</h3><p>Choose a shape and colour together. Have the bridge, temples and lens position checked by an optician.</p></article><article><span>03 / KEEP IN TOUCH</span><h3>Make room for growing up.</h3><p>Ask when to return for a vision review, and who to contact if their glasses need adjusting.</p></article></div></div></section>
- <section class="lens-section wrap"><div class="section-heading"><div><p class="eyebrow">LET’S TALK LENSES</p><h2>The part you look through matters, too.</h2></div><p>Start with the prescription.<br>Choose the extras with an optician.</p></div><div class="lens-columns"><article><span class="lens-disc clear-lens"></span><h3>Everyday clarity</h3><p>Prescription lenses for their everyday pair. Ask about material, coating and total cost.</p></article><article><span class="lens-disc sun-lens"></span><h3>Inside. Outside.</h3><p>Photochromic lenses change tint with light conditions. Your optician can explain the options.</p></article><article><span class="lens-disc care-lens"></span><h3>When myopia needs a plan</h3><p>Myopia-management lenses are a separate clinical decision. Discuss suitability and follow-up at a vision appointment.</p></article></div><a class="text-link" data-route href="/appointment?reason=lenses">Get help choosing lenses →</a></section>
+ <section class="try-banner mobile-try-banner wrap"><div class="mobile-preview">${phonePreviewHTML(PERSONAS[0])}<span class="preview-caption">A little “that’s me!” moment.</span></div><div class="try-copy"><p class="eyebrow">THEIR STYLE. YOUR PHONE.</p><h2>Let them see<br>themselves in it.</h2><p>Explore the frame. Compare a lens finish. Find a favourite together. Then let your optician check the fit behind the look.</p><a class="btn solid" data-route href="/try-on">Explore the try-on experience ↗</a><small>Sample looks available now. Personal photo try-on is being connected.</small></div></section>
+ ${visionStoryHTML()}
+ ${careTeamHTML()}
  <section class="faq-section wrap"><div><p class="eyebrow">PARENT TO PARENT</p><h2>A few things<br>you might be wondering.</h2></div><div class="faq-list">${[
    [
      "The school sent a screening report. What next?",
@@ -276,7 +277,7 @@
    ],
    [
      "Can we try the frames on at home?",
-     "SKIDS virtual try-on is being prepared with our technology partner. For now, save a shortlist together and contact the clinic for a fitting.",
+     "Explore sample looks and lens finishes in SKIDS Virtual Try-on. Personal photo try-on is being connected with our partner. An optician still needs to confirm the final fit.",
    ],
    [
      "Are the prices final?",
@@ -294,13 +295,14 @@
    })
    .join(
      "",
-   )}</div></section><section class="closing-note"><p>More playground. More page-turning. More possibility.</p><h2>Here’s to seeing it all.</h2><a class="btn solid" data-route href="/frames">Find their pair ↗</a></section>`;
+   )}</div></section><section class="closing-note"><p>For the child they are. And everyone they might become.</p><h2>Their future deserves a clear start.</h2><a class="btn solid" data-route href="/frames">Find their pair ↗</a></section>`;
     wireProductCards(app);
     wirePersonaCarousel();
+    wireVisionStory();
   }
   function personaCarouselHTML() {
     return (
-      '<section class="persona-section wrap" id="personalities" aria-roledescription="carousel" aria-label="Eyewear for their kind of curious"><div class="section-heading"><div><p class="eyebrow">LET KIDS BE ALL KINDS OF KIDS.</p><h2>Who will they be today?</h2></div><p>A scientist before lunch. An adventurer after.<br>Find a look for every side of them.</p></div><div class="persona-tabs" role="tablist" aria-label="Explore their interests">' +
+      '<section class="persona-section wrap" id="personalities" aria-roledescription="carousel" aria-label="Eyewear for their kind of curious"><div class="section-heading"><div><p class="eyebrow">LET KIDS BE ALL KINDS OF KIDS.</p><h2>Who will they be today?</h2></div><p>You see who they are. And who they could become.<br>Let their personality lead the way.</p></div><div class="persona-tabs" role="tablist" aria-label="Explore their interests">' +
       PERSONAS.map(function (p, i) {
         return (
           '<button id="persona-tab-' +
@@ -371,7 +373,10 @@
         '">Explore this look ↗</a><a class="text-link" data-route href="/appointment?reason=lenses">' +
         p.lensLink +
         " →</a></div></div></article>";
-      $("#persona-count").textContent = "0" + (index + 1) + " / 04";
+      $("#persona-count").textContent =
+        String(index + 1).padStart(2, "0") +
+        " / " +
+        String(PERSONAS.length).padStart(2, "0");
       if (focusTab) tabs[index].focus({ preventScroll: true });
       var start = null,
         swipe = $("#persona-swipe");
@@ -412,6 +417,187 @@
       show(index + 1, false);
     };
     show(0, false);
+  }
+
+  var VISION_STEPS = [
+    {
+      id: "eyes",
+      label: "The eyes",
+      kicker: "01 / THE REMARKABLE STARTING POINT",
+      title: "A little light.\nAn extraordinary journey.",
+      body: "Light passes through the cornea and pupil. The eye’s own lens helps focus it on the retina. The retina turns light into signals; the optic nerve carries them to the brain.",
+      detail:
+        "Seeing is a whole system working together. A vision examination helps understand how your child’s system is doing.",
+      foot: "Simplified anatomy. Illustration only.",
+      link: "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work",
+      linkLabel: "How eyes work · National Eye Institute ↗",
+    },
+    {
+      id: "lenses",
+      label: "The lenses",
+      kicker: "02 / DESIGNED AROUND THEIR PRESCRIPTION",
+      title: "Small details.\nA very personal lens.",
+      body: "The prescription shapes how a lens bends light. Material affects its weight and thickness. Surface coatings and optional tints add other practical choices.",
+      detail:
+        "Clear, photochromic and myopia-management lenses do different jobs. The right discussion starts with an examination, not a personality type.",
+      foot: "Design considerations shown separately; not a literal stack of lens layers.",
+      link: "/appointment?reason=lenses",
+      linkLabel: "Talk through the lens options →",
+    },
+    {
+      id: "fit",
+      label: "The fit",
+      kicker: "03 / WHERE OPTICS MEETS A GROWING FACE",
+      title: "A great look.\nThe right place to look through.",
+      body: "The bridge, temples and frame size affect how a pair sits. Pupillary distance and fitting height help place the lenses in relation to the eyes.",
+      detail:
+        "Virtual try-on helps explore a look. Optical measurements and an optician’s check help turn that choice into a properly fitted pair.",
+      foot: "Illustrated fitting positions. No measurement is taken from this diagram.",
+      link: "/try-on",
+      linkLabel: "Explore the mobile experience →",
+    },
+    {
+      id: "life",
+      label: "Their world",
+      kicker: "04 / BACK TO THE IMPORTANT STUFF",
+      title: "The board. The book.\nThe next big idea.",
+      body: "The point of all those little details is everyday life: spotting a detail, following a lesson, finding a new interest. Their ambitions belong to them.",
+      detail:
+        "SKIDS brings the eye examination, lens discussion and continuing care into the same conversation—so parents have a clearer next step as children grow.",
+      foot: "Care is individual. Glasses are one part of supporting a child’s vision.",
+      link: "/appointment",
+      linkLabel: "Start their vision-care journey →",
+    },
+  ];
+  function visionArtwork(id) {
+    if (id === "life")
+      return '<div class="vision-life-grid"><figure><img src="/assets/persona-scientist.webp" alt="A child investigating a leaf" loading="lazy"><figcaption>The next discovery.</figcaption></figure><figure><img src="/assets/persona-doctor.webp" alt="A child playing doctor with a teddy" loading="lazy"><figcaption>The person they might become.</figcaption></figure></div>';
+    var start =
+      '<svg class="vision-diagram" viewBox="0 0 620 420" role="img" aria-label="' +
+      {
+        eyes: "Simplified light path through the cornea and lens to the retina and optic nerve",
+        lenses:
+          "Lens shape, material and surface coating shown as three separate design considerations",
+        fit: "Illustrative glasses with pupillary distance and fitting-height guides",
+      }[id] +
+      '">';
+    if (id === "eyes")
+      return (
+        start +
+        '<defs><radialGradient id="eye-fill"><stop stop-color="#9ebd9c" stop-opacity=".15"/><stop offset="1" stop-color="#9ebd9c" stop-opacity=".025"/></radialGradient></defs><ellipse cx="370" cy="211" rx="150" ry="119" fill="url(#eye-fill)" stroke="#7c9986" stroke-width="2"/><path d="M240 144 Q185 211 240 278" fill="#93c4b7" fill-opacity=".09" stroke="#b8d5c4" stroke-width="2"/><path d="M493 142 Q545 211 493 280" fill="none" stroke="#e5b762" stroke-width="5"/><path d="M243 155v25 M243 242v25" stroke="#9fcbb4" stroke-width="7"/><ellipse cx="274" cy="211" rx="17" ry="48" fill="#cfe1ce" fill-opacity=".16" stroke="#cfe1ce" stroke-width="2"/><g fill="none" stroke="#e5b762" stroke-width="1.6"><path d="M32 115 L215 174 L274 188 L509 211"/><path d="M32 211 H509"/><path d="M32 307 L215 249 L274 234 L509 211"/></g><circle cx="509" cy="211" r="5" fill="#f5ca77"/><path d="M521 201 Q557 203 577 178 M521 219 Q557 227 588 200" fill="none" stroke="#a3bfa5" stroke-width="5"/><g fill="#dce7d8" font-family="Arial,sans-serif" font-size="12"><text x="35" y="89">LIGHT</text><text x="140" y="122">Cornea</text><text x="190" y="321">Pupil</text><text x="276" y="304">Eye’s lens</text><text x="452" y="89">Retina</text><text x="491" y="319">Optic nerve</text><text x="440" y="357" fill="#8da493">Signals travel to the brain →</text></g><g stroke="#6b8574" fill="none"><path d="M181 126l33 32 M218 305l25-66 M292 286l-9-35 M478 97l23 47 M527 302l34-87"/></g></svg>'
+      );
+    if (id === "lenses")
+      return (
+        start +
+        '<g transform="translate(0 0)"><ellipse cx="214" cy="140" rx="108" ry="66" transform="rotate(-27 214 140)" fill="#a9c8b0" fill-opacity=".17" stroke="#bad3bd" stroke-width="2"/><ellipse cx="306" cy="215" rx="108" ry="66" transform="rotate(-27 306 215)" fill="#d4e4ce" fill-opacity=".12" stroke="#a7c5b7" stroke-width="2"/><ellipse cx="398" cy="290" rx="108" ry="66" transform="rotate(-27 398 290)" fill="#b3a060" fill-opacity=".13" stroke="#ddbb76" stroke-width="2"/><path d="M137 113Q202 61 265 93 M230 187Q295 135 358 167 M322 263Q387 211 450 243" fill="none" stroke="#ecf2df" stroke-opacity=".5"/><g stroke="#719080" stroke-dasharray="3 5"><path d="M118 187l181 152 M312 83l181 150"/></g><g fill="#e4eddf" font-family="Arial,sans-serif" font-size="13"><text x="327" y="82">01  Prescription &amp; shape</text><text x="415" y="187">02  Lens material</text><text x="111" y="357">03  Surface coating &amp; finish</text></g><g stroke="#719080" fill="none"><path d="M326 86l-28 20 M417 192l-27 17 M289 351l45-29"/></g></g></svg>'
+      );
+    return (
+      start +
+      '<g transform="translate(115 118) scale(1.3)">' +
+      frameSvg(FRAMES[1], "#c1d2bc", 300)
+        .replace(/<svg[^>]*>/, "<g>")
+        .replace("</svg>", "</g>") +
+      '</g><g fill="#efcb80"><circle cx="230" cy="217" r="4"/><circle cx="391" cy="217" r="4"/></g><g stroke="#8cac99" stroke-dasharray="4 5"><path d="M230 123v137 M391 123v137"/></g><g stroke="#efcb80" fill="none"><path d="M230 126h161 M230 119v14 M391 119v14 M426 217v50 M419 217h14 M419 267h14"/></g><g fill="#dce7d8" font-family="Arial,sans-serif" font-size="13"><text x="241" y="102">Pupillary distance</text><text x="446" y="241">Fitting height</text><text x="215" y="325">A frame that sits where it should.</text><text x="205" y="352" font-size="11" fill="#8da493">Bridge · temples · size · lens position</text></g></svg>'
+    );
+  }
+  function visionStoryHTML() {
+    return (
+      '<section class="vision-story" id="care"><div class="wrap"><div class="vision-story-heading"><p class="eyebrow">WHY SKIDS VISION IS SPECIAL</p><h2>Behind one clear moment.<br><em>A whole world of care.</em></h2><p>Vision is intricate. Caring for it should feel connected.<br> Take a closer look, from the first ray of light to their everyday world.</p></div><div class="vision-step-tabs" role="tablist" aria-label="Explore the vision system">' +
+      VISION_STEPS.map(function (v, i) {
+        return (
+          '<button type="button" role="tab" id="vision-tab-' +
+          v.id +
+          '" aria-controls="vision-panel" aria-selected="' +
+          (i === 0) +
+          '" tabindex="' +
+          (i === 0 ? 0 : -1) +
+          '" data-vision-step="' +
+          i +
+          '"><small>0' +
+          (i + 1) +
+          "</small>" +
+          v.label +
+          "</button>"
+        );
+      }).join("") +
+      '</div><div id="vision-panel" role="tabpanel" aria-labelledby="vision-tab-eyes" tabindex="0"></div></div></section>'
+    );
+  }
+  function wireVisionStory() {
+    var tabs = $$("[data-vision-step]", app),
+      panel = $("#vision-panel"),
+      index = 0;
+    function show(i, focus) {
+      index = (i + VISION_STEPS.length) % VISION_STEPS.length;
+      var v = VISION_STEPS[index];
+      tabs.forEach(function (t, j) {
+        t.setAttribute("aria-selected", String(j === index));
+        t.tabIndex = j === index ? 0 : -1;
+      });
+      panel.setAttribute("aria-labelledby", "vision-tab-" + v.id);
+      panel.innerHTML =
+        '<div class="vision-step"><div class="vision-artwork">' +
+        visionArtwork(v.id) +
+        "<p>" +
+        v.foot +
+        '</p></div><div class="vision-explanation"><p class="eyebrow">' +
+        v.kicker +
+        "</p><h3>" +
+        v.title.split("\n").map(esc).join("<br>") +
+        "</h3><p>" +
+        v.body +
+        '</p><p class="vision-takeaway">' +
+        v.detail +
+        '</p><a class="text-link" ' +
+        (v.link.startsWith("/")
+          ? "data-route"
+          : 'target="_blank" rel="noopener"') +
+        ' href="' +
+        v.link +
+        '">' +
+        v.linkLabel +
+        '</a><button class="vision-next" id="vision-next" type="button">' +
+        (index === 3
+          ? "Back to the eyes ↺"
+          : "Next: " + VISION_STEPS[index + 1].label + " →") +
+        "</button></div></div>";
+      $("#vision-next").onclick = function () {
+        show(index + 1, false);
+      };
+      if (focus) tabs[index].focus({ preventScroll: true });
+    }
+    tabs.forEach(function (t, i) {
+      t.onclick = function () {
+        show(i, false);
+      };
+      t.onkeydown = function (e) {
+        var n;
+        if (e.key === "ArrowRight") n = index + 1;
+        else if (e.key === "ArrowLeft") n = index - 1;
+        else if (e.key === "Home") n = 0;
+        else if (e.key === "End") n = 3;
+        else return;
+        e.preventDefault();
+        show(n, true);
+      };
+    });
+    show(0, false);
+  }
+  function careTeamHTML() {
+    return '<section class="whole-child-care wrap"><div class="section-heading"><div><p class="eyebrow">THE TEAM BEHIND THEIR TOMORROW</p><h2>Three kinds of expertise.<br>One child at the centre.</h2></div><p>A growing child deserves a care plan<br>that can grow with them.</p></div><div class="care-team-orbit" aria-hidden="true"><span>PEDIATRICIAN</span><i></i><b>YOUR<br>CHILD</b><i></i><span>EYE CARE TEAM</span></div><div class="care-team-grid"><article><span class="care-role-number">01</span><h3>The pediatrician.</h3><h4>Sees the whole child.</h4><p>Brings the child’s growth, everyday routines and parent observations into the care plan, and coordinates the next steps.</p></article><article><span class="care-role-number">02</span><h3>The optometrist.</h3><h4>Gets into the optical detail.</h4><p>Checks refraction, discusses lenses and helps with dispensing and fit. The practical detail behind a comfortable pair.</p></article><article><span class="care-role-number">03</span><h3>The ophthalmologist.</h3><h4>Brings specialist eye care.</h4><p>Our pediatric ophthalmology partner is involved when findings need specialist assessment or treatment, with the child’s history in context.</p></article></div><div class="care-continuity"><div><p class="eyebrow">AND THE PART THAT KEEPS GOING</p><h3>Care doesn’t finish at “nice glasses.”</h3><p>Review the vision. Recheck the fit. Revisit the plan as they grow. The SKIDS clinic coordinates the follow-up your child needs.</p></div><a class="btn solid" data-route href="/appointment">Start with the care team ↗</a></div><a class="care-source" href="https://www.skids.clinic/clinics/vision/" target="_blank" rel="noopener">Explore the SKIDS Vision Clinic care model ↗</a></section>';
+  }
+  function phonePreviewHTML(p) {
+    return (
+      '<div class="try-phone"><div class="phone-top"><b>skids. <span>vision</span></b><small>STYLE PREVIEW</small></div><div class="phone-photo"><img src="' +
+      p.image +
+      '" alt="' +
+      p.alt +
+      '" loading="lazy"><span class="phone-sample-label">Sample look</span></div><div class="phone-caption"><b>' +
+      frameById(p.frame).name +
+      "</b><span>" +
+      colorById(p.colour).name +
+      '</span></div><div class="phone-home-bar"></div></div>'
+    );
   }
 
   function productCard(f) {
@@ -734,23 +920,97 @@
   /* ---------- TRY-ON ---------- */
   function tryonPage() {
     document.getElementById("footer").innerHTML = footerHTML();
-    var f =
+    var selected =
       frameById(new URLSearchParams(location.search).get("frame")) || FRAMES[2];
+    var persona =
+      PERSONAS.find(function (p) {
+        return p.frame === selected.id;
+      }) || null;
     app.innerHTML =
-      '<section class="wrap page"><p class="crumb"><a data-route href="/frames">Frames</a> / Virtual try-on</p><div class="try-page"><div class="try-art">' +
-      frameSvg(f, colorById(f.colors[0]).hex, 400) +
-      '<span>Your next <em>favourite?</em></span></div><div><p class="eyebrow">SKIDS VIRTUAL TRY-ON</p><h1>See the look.<br>Then check the fit.</h1><p>Our at-home try-on experience is on its way. You’ll be able to explore a frame’s look before speaking with an optician about the fit.</p><div class="availability-note"><b>Online try-on isn’t available yet.</b><p>For now, save frames you both like and ask the clinic about trying them on. No camera or child’s photo is needed here.</p></div><button class="btn solid" id="saveTry">Save ' +
-      f.name +
-      ' to favourites</button><a class="text-link" data-route href="/appointment">Arrange a fitting →</a><a class="text-link" data-route href="/frames">Keep exploring frames →</a></div></div></section>';
+      '<section class="page wrap mobile-showroom"><p class="crumb"><a data-route href="/frames">Frames</a> / SKIDS Virtual Try-on</p><div class="showroom-heading"><p class="eyebrow">A LITTLE “THAT’S ME!” MOMENT</p><h1>Their next pair.<br>In their own style.</h1><p>Explore a look together. Get to know the lenses. Then let an optician help with the fit behind the favourite.</p></div><div class="showroom-grid"><div class="showroom-device"><div id="samplePhone"></div><p>Campaign portrait · style inspiration</p></div><div class="showroom-options"><p class="eyebrow">01 / CHOOSE A SAMPLE LOOK</p><h2>Which one feels like them?</h2><div class="sample-looks">' +
+      PERSONAS.map(function (p) {
+        return (
+          '<button type="button" data-sample="' +
+          p.id +
+          '" aria-pressed="false" aria-label="Preview ' +
+          p.label.toLowerCase() +
+          ' look"><img src="' +
+          p.image +
+          '" alt="" loading="lazy"><span>' +
+          p.label.replace("The ", "") +
+          "</span></button>"
+        );
+      }).join("") +
+      '</div><div class="lens-explorer"><p class="eyebrow">02 / LOOK AT THE LENS FINISH</p><div class="lens-explorer-body"><div class="lens-swatch-demo" id="lensSwatch" data-finish="clear" role="img" aria-label="Illustrative clear lens finish"><svg viewBox="0 0 140 140" aria-hidden="true"><circle cx="70" cy="70" r="65" fill="#d8e6e3"/><path d="M0 105L48 45l33 40 25-22 40 45v38H0Z" fill="#94b7a2"/><path d="M0 115l43-37 44 41 22-24 31 31v14H0Z" fill="#476955"/><circle cx="105" cy="35" r="12" fill="#f6da9d"/></svg><i></i></div><div><div class="finish-buttons" aria-label="Illustrative lens finish"><button id="finishClear" type="button" aria-pressed="true">Clear</button><button id="finishTint" type="button" aria-pressed="false">Outdoor tint</button></div><h3 id="finishTitle">Everyday, clear.</h3><p id="finishDescription">Start with the prescription. Discuss the lens material and coatings with your optician.</p></div></div><small>Illustrative tint only. Not a simulation of vision, UV protection or photochromic performance.</small></div><div class="showroom-next"><p class="eyebrow">03 / KEEP A FAVOURITE. CHECK THE FIT.</p><button class="btn solid" id="saveTry">Save this look</button><a class="text-link" data-route id="sampleProduct" href="/frames/' +
+      selected.id +
+      '">Explore this frame →</a><p id="sampleSaved" role="status"></p></div><div class="showroom-status"><b>Personal photo try-on is being connected.</b><p>Our mobile experience is in setup. These sample looks are available now; your own-photo try-on and optical measurements will follow through the clinic.</p><a class="text-link" data-route href="/appointment">Arrange a fitting with SKIDS →</a></div></div></div></section>';
+    function refresh() {
+      $("#samplePhone").innerHTML = persona
+        ? phonePreviewHTML(persona)
+        : '<div class="try-phone"><div class="phone-top"><b>skids. <span>vision</span></b><small>FRAME ILLUSTRATION</small></div><div class="phone-frame-only">' +
+          frameSvg(selected, colorById(selected.colors[0]).hex, 240) +
+          '<p>No sample portrait for this frame yet.</p></div><div class="phone-caption"><b>' +
+          selected.name +
+          "</b><span>" +
+          selected.age +
+          "</span></div></div>";
+      $$("[data-sample]", app).forEach(function (b) {
+        b.setAttribute(
+          "aria-pressed",
+          String(persona && b.dataset.sample === persona.id),
+        );
+      });
+      $("#sampleProduct").href =
+        "/frames/" +
+        selected.id +
+        (persona ? "?colour=" + persona.colour + "&persona=" + persona.id : "");
+      $("#saveTry").textContent = "Save " + selected.name + " to favourites";
+      $("#sampleSaved").textContent = "";
+    }
+    $$("[data-sample]", app).forEach(function (b) {
+      b.onclick = function () {
+        persona = PERSONAS.find(function (p) {
+          return p.id === b.dataset.sample;
+        });
+        selected = frameById(persona.frame);
+        refresh();
+      };
+    });
+    function finish(tinted) {
+      $("#finishClear").setAttribute("aria-pressed", String(!tinted));
+      $("#finishTint").setAttribute("aria-pressed", String(tinted));
+      $("#lensSwatch").dataset.finish = tinted ? "tint" : "clear";
+      $("#lensSwatch").setAttribute(
+        "aria-label",
+        tinted
+          ? "Illustrative outdoor lens tint"
+          : "Illustrative clear lens finish",
+      );
+      $("#finishTitle").textContent = tinted
+        ? "For the changing light."
+        : "Everyday, clear.";
+      $("#finishDescription").textContent = tinted
+        ? "Ask about photochromic or sun-lens options. The actual tint and how it changes depend on the chosen lens and conditions."
+        : "Start with the prescription. Discuss the lens material and coatings with your optician.";
+    }
+    $("#finishClear").onclick = function () {
+      finish(false);
+    };
+    $("#finishTint").onclick = function () {
+      finish(true);
+    };
     $("#saveTry").onclick = function () {
-      if (!S.wishlist.includes(f.id)) {
-        S.wishlist.push(f.id);
+      if (!S.wishlist.includes(selected.id)) {
+        S.wishlist.push(selected.id);
         save();
       }
-      toast(f.name + " saved to favourites");
-      this.textContent = "Saved to favourites";
+      $("#sampleSaved").textContent =
+        selected.name + " saved to your favourites.";
+      toast(selected.name + " saved to favourites");
     };
+    refresh();
   }
+
   function rxPage() {
     document.getElementById("footer").innerHTML = footerHTML();
     var p = S.prescription || {};

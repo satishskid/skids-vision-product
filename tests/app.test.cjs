@@ -163,6 +163,11 @@ test("personality carousel changes stories, wraps and supports keyboard navigati
   assert.match(d.querySelector("#persona-panel").textContent, /Big questions/);
   d.querySelector("#persona-next").click();
   assert.equal(
+    d.querySelector("#persona-tab-doctor").getAttribute("aria-selected"),
+    "true",
+  );
+  d.querySelector("#persona-next").click();
+  assert.equal(
     d.querySelector("#persona-tab-sports").getAttribute("aria-selected"),
     "true",
   );
@@ -181,14 +186,18 @@ test("personality carousel changes stories, wraps and supports keyboard navigati
     "true",
   );
   d.querySelector("#persona-prev").click();
-  assert.equal(d.querySelector("#persona-count").textContent, "04 / 04");
-  assert.equal(d.querySelectorAll('[role="tab"][tabindex="0"]').length, 1);
+  assert.equal(d.querySelector("#persona-count").textContent, "05 / 05");
+  assert.equal(
+    d.querySelectorAll('.persona-tabs [role="tab"][tabindex="0"]').length,
+    1,
+  );
   close();
 });
 
 test("each personality carries its exact frame and colour into the product flow", () => {
   for (const [id, frame, colour] of [
     ["scientist", "scholar", "midnight"],
+    ["doctor", "sunbeam", "rose"],
     ["sports", "explorer", "crystal-blue"],
     ["creator", "stargazer", "plum"],
     ["adventurer", "striker", "meadow"],
@@ -231,8 +240,84 @@ test("horizontal carousel gesture changes slide and vertical gesture does not", 
     );
   };
   gesture(190, 100);
-  assert.equal(d.querySelector("#persona-count").textContent, "01 / 04");
+  assert.equal(d.querySelector("#persona-count").textContent, "01 / 05");
   gesture(100, 190);
-  assert.equal(d.querySelector("#persona-count").textContent, "02 / 04");
+  assert.equal(d.querySelector("#persona-count").textContent, "02 / 05");
+  close();
+});
+
+test("vision breakdown traverses eyes, lenses, fit and life with correct accessible state", () => {
+  const { w, d, close } = boot("/");
+  assert.match(d.querySelector("#vision-panel").textContent, /retina/);
+  d.querySelector("#vision-next").click();
+  assert.equal(
+    d.querySelector("#vision-tab-lenses").getAttribute("aria-selected"),
+    "true",
+  );
+  assert.match(
+    d.querySelector("#vision-panel").textContent,
+    /not a literal stack/,
+  );
+  d.querySelector("#vision-next").click();
+  assert.match(
+    d.querySelector("#vision-panel").textContent,
+    /Pupillary distance/,
+  );
+  d.querySelector("#vision-tab-fit").dispatchEvent(
+    new w.KeyboardEvent("keydown", { key: "End", bubbles: true }),
+  );
+  assert.equal(d.activeElement.id, "vision-tab-life");
+  assert.equal(
+    d.querySelectorAll("#vision-panel .vision-life-grid img").length,
+    2,
+  );
+  d.querySelector("#vision-next").click();
+  assert.equal(
+    d.querySelector("#vision-panel").getAttribute("aria-labelledby"),
+    "vision-tab-eyes",
+  );
+  assert.equal(
+    d.querySelectorAll('.vision-step-tabs [tabindex="0"]').length,
+    1,
+  );
+  close();
+});
+
+test("mobile sample looks and tint demo work without prescribing or collecting a photo", () => {
+  const { w, d, close } = boot("/try-on?frame=explorer");
+  d.querySelector('[data-sample="doctor"]').click();
+  assert.match(d.querySelector("#samplePhone img").src, /persona-doctor/);
+  d.querySelector("#finishTint").click();
+  assert.equal(d.querySelector("#lensSwatch").dataset.finish, "tint");
+  assert.equal(
+    d.querySelector("#finishTint").getAttribute("aria-pressed"),
+    "true",
+  );
+  d.querySelector("#finishClear").click();
+  assert.equal(d.querySelector("#lensSwatch").dataset.finish, "clear");
+  d.querySelector("#saveTry").click();
+  assert.deepEqual(saved(w).wishlist, ["sunbeam"]);
+  assert.equal(d.querySelectorAll('input[type="file"],video,iframe').length, 0);
+  d.querySelector("#sampleProduct").click();
+  assert.equal(
+    d.querySelector('.sw[aria-pressed="true"]').dataset.color,
+    "rose",
+  );
+  assert.equal(
+    d.querySelector('.opt[aria-pressed="true"]').dataset.lens,
+    "standard",
+  );
+  close();
+});
+
+test("a frame without a campaign portrait retains its identity in the sample showroom", () => {
+  const { w, d, close } = boot("/try-on?frame=feather");
+  assert.match(d.querySelector("#samplePhone").textContent, /Feather/);
+  assert.match(
+    d.querySelector("#samplePhone").textContent,
+    /No sample portrait/,
+  );
+  d.querySelector("#saveTry").click();
+  assert.deepEqual(saved(w).wishlist, ["feather"]);
   close();
 });

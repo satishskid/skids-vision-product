@@ -12,10 +12,10 @@ A parent-facing children's eyewear storefront and clinic-planning experience. Th
 
 | Route | Behaviour |
 |---|---|
-| `/` | Campaign, four-personality carousel (scientist, sport star, creator, adventurer), three parent entry routes, age discovery, featured frames, care/lens guidance, native FAQ disclosures |
+| `/` | Campaign, five-personality carousel (scientist, little doctor, sport star, creator, adventurer), three parent entry routes, age discovery, featured frames, interactive eyes–lenses–fit–life breakdown, three-person care model and native FAQs |
 | `/frames` | Search, age-range overlap, style filters, price/name sorting and saved-only filter; clear empty state |
 | `/frames/:id` | Frame illustration, keyboard-accessible colours/lenses, price calculation, quantity and add to bag |
-| `/try-on?frame=id` | SKIDS-branded try-on introduction, explicit unavailable state, selected-frame favourite and clinic fitting route |
+| `/try-on?frame=id` | Mobile-style sample showroom: five campaign looks, illustrative clear/tint comparison, selected-frame favourites and product handoff; own-photo connection still pending |
 | `/prescription` | Validated prescription notes, held in memory only; clear action; no upload or clinic-record claims |
 | `/cart` | Quantity changes, removal, correct totals and review |
 | `/checkout` | Review and save a local shopping list; no payment, personal-address collection or order submission |
@@ -42,9 +42,9 @@ The dev-only jsdom suite checks route rendering, combined filters, saved-only em
 
 ## Oculfit white-label integration
 
-The intended partner is **Oculfit**. Public-facing copy uses **SKIDS Virtual Try-on**. The old manual overlay and simulated PD measurement have been removed.
+The user confirmed that SKIDS has **signed up with Oculfit**. Public-facing copy uses **SKIDS Virtual Try-on**. The old manual overlay and simulated PD measurement have been removed.
 
-No public SDK contract or authenticated partner tenant was supplied. The current try-on route therefore makes no camera request and clearly explains its availability. To activate the real service, obtain:
+No public SDK contract or authenticated partner tenant was supplied. The current route provides an interactive sample showroom and makes no camera request. A paid/signed-up account alone does not establish a working site integration. To activate the real service, obtain:
 
 - Approved partner tenant and SDK/hosted-session documentation.
 - Frame SKU mapping and real digital frame assets.
@@ -64,16 +64,21 @@ Keep the camera-denying Permissions-Policy until a reviewed partner integration 
 ## Deploy
 
 ```sh
+npm run prepare:assets
 CLOUDFLARE_ACCOUNT_ID=27f2f514327f6ec9f477357f545b58af \
   npx wrangler pages deploy public --project-name skids-vision --branch main
 ```
 
-Before deploying changed CSS or JavaScript, refresh the `?v=` values in `public/index.html` with the first 12 characters of each asset’s SHA-256 hash. This prevents returning browsers from combining a new page shell with stale scripts or styles.
+Before deploying changed CSS or JavaScript, run `npm run prepare:assets` to refresh the `?v=` values in `public/index.html` from each asset’s SHA-256 hash. This prevents returning browsers from combining a new page shell with stale scripts or styles.
 
 Cloudflare `_redirects` provides SPA fallback. `_headers` retains the existing security controls.
 
 ## Personality-led discovery
 
-The homepage starts eyewear discovery with interests: scientist, sport star, creator and adventurer. Each story has a separate campaign image, frame/colour direction and lens conversation. Children can explore every identity; the text does not assign careers or treatment based on appearance. Manual previous/next, horizontal image swipe, keyboard arrow/Home/End controls and an announced slide count support accessible browsing. No autoplay.
+The homepage starts with parental hopes and the belief that every kid is already smart and super. Eyewear discovery follows five interests: scientist, doctor, sport star, creator and adventurer. Each story has a separate campaign image, frame/colour direction and lens conversation. Children can explore every identity; the text does not assign careers or treatment based on appearance. Manual previous/next, horizontal image swipe, keyboard arrow/Home/End controls and an announced slide count support accessible browsing. The separate vision-system tabs are independently keyboard accessible. No autoplay.
 
 “Explore this look” carries the frame and selected colour to the PDP. The matching context follows the parent, but no specialist lens is preselected by persona. Sports copy explicitly distinguishes ordinary glasses from protective sports eyewear.
+
+## Why SKIDS Vision
+
+An interactive, dark-green product-explainer section moves from the eye’s light path, through lens-design considerations and fitting positions, to everyday life. Original SVG diagrams are educational simplifications, not measurements or diagnostic tools. Lens plates are expressly separate design considerations rather than literal physical layers. The care section explains pediatrician, optometrist and pediatric ophthalmology partner roles and continuing reviews. Primary references are recorded in `docs/design-research.md`.

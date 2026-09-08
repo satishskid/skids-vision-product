@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "test": "node --test tests/app.test.cjs",
-    "dev": "python3 scripts/serve.py"
+    "dev": "python3 scripts/serve.py",
+    "prepare:assets": "python3 scripts/version-assets.py"
   },
   "devDependencies": {
     "jsdom": "^26.1.0"

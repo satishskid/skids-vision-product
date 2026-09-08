@@ -55,3 +55,17 @@ Additional primary references, reviewed 8 September 2026:
 Added regression coverage for carousel wraparound/keyboard focus, all four frame-and-colour handoffs, invalid colour fallback and horizontal versus vertical gestures.
 
 Final persona verification: 23 tests passed. Browser checks confirmed tab/arrow selection, next-slide control, loaded campaign imagery, creator-to-plum-PDP handoff, and no page overflow at 320px or 390px. All four generated assets were visually inspected and encoded as WebP; together they are about 552 KB, with carousel images requested lazily.
+
+## From parental hopes to the system of care
+
+User direction: SKIDS means every kid is already smart and super. Parents are investing in their child's possibilities, personality and style. Added an aspirational hero, the SKIDS belief, the little-doctor campaign, and parent-facing stories that leave the child's future open. This is a brand belief, not a claim that lenses increase intelligence or guarantee achievement.
+
+Research, 8 September 2026:
+
+- **National Eye Institute — How the Eyes Work**, updated 20 April 2022: https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work . Supports the light → cornea/pupil → lens → retina → optic nerve → brain explanation. Original simplified SVG, no diagnostic simulation.
+- **SKIDS — Vision Clinic**, publication date not stated: https://www.skids.clinic/clinics/vision/ . Confirms the published pediatrician, optometrist and ophthalmology-partner care model. Do not imply an ophthalmologist attends every appointment or promise an unverified consultation slot.
+- **Oculfit — homepage**, publication date not stated: https://www.oculfit.com/ . Inspected the live public site and its tablet/phone interface images in the browser. The public page shows front/side fitting guides, custom branding, frame preview and lens visualisation. It does not expose a working public customer try-on launch or an SDK contract. Earlier Firecrawl billing and Omniroute failures are already documented; browser inspection provided the current interface evidence.
+
+The user confirmed their Oculfit signup. Asked for the non-secret partner/demo URL while proceeding with the design. The site's mobile-style showroom provides real sample selection, an explicitly illustrative clear/tint comparison, favourite saving and a frame/colour handoff. It does not pretend to measure a child or overlay frames on their photo. No camera or child-image collection has been enabled.
+
+The “Why SKIDS Vision” story follows eyes → lenses → fit → everyday life with four independently accessible tabs. A separate care section connects the three clinician roles and follow-up. This follows the detailed-component-to-everyday-benefit structure requested by the user without copying Apple's branding or making proprietary technology claims.

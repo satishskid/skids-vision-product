@@ -146,7 +146,7 @@ var PERSONAS = [
     name: "For the one who asks “why?”",
     headline: "Big questions.\nBright little eyes.",
     story:
-      "The leaf collector. The kitchen-table inventor. The kid with one more question, even after lights out.",
+      "You see their questions becoming discoveries. They see a fascinating leaf. A pair that feels like them is one small part of caring for the curious mind behind it.",
     image: "/assets/persona-scientist.webp",
     alt: "A curious child in navy rectangular glasses studying a leaf with a magnifying glass",
     colour: "midnight",
@@ -161,12 +161,33 @@ var PERSONAS = [
     palette: "sage",
   },
   {
+    id: "doctor",
+    label: "The little doctor",
+    name: "For the one who makes everyone feel better",
+    headline: "A caring heart.\nA future full of possibility.",
+    story:
+      "A check-up for every teddy. A bandage for every bump. You see their kindness today, and the person it could become tomorrow.",
+    image: "/assets/persona-doctor.webp",
+    alt: "A child in rose round glasses playing doctor with a toy stethoscope and a teddy bear",
+    colour: "rose",
+    frame: "sunbeam",
+    style: "playful",
+    frameNote:
+      "Soft, round and full of warmth. A little colour for a caring little person.",
+    lensTitle: "Clear lenses for little details",
+    lensNote:
+      "Start with an eye examination and their prescription. Your optician can help choose the material, coating and fit.",
+    lensLink: "Talk about their first pair",
+    caption: "The teddy is in very good hands.",
+    palette: "sky",
+  },
+  {
     id: "sports",
     label: "The sport star",
     name: "For the “one more game” kid",
     headline: "Big team spirit.\nTheir own little style.",
     story:
-      "Always picking teams. Always cheering the loudest. And somehow, always finding time for one more game.",
+      "You see determination, teamwork and a future full of possibilities. They just want one more game. A sporty everyday look for the child who gives everything a go.",
     image: "/assets/persona-sports.webp",
     alt: "A smiling child in blue glasses holding a football while resting beside the playing field",
     colour: "crystal-blue",
@@ -186,7 +207,7 @@ var PERSONAS = [
     name: "For the beautifully messy maker",
     headline: "A little colour.\nA lot of “I made this.”",
     story:
-      "Paint on the fingers. Plans on every scrap of paper. The ordinary becomes something extraordinary around this kid.",
+      "You see an artist, a designer, a maker of wonderful things. They see a cardboard box with potential. Let their glasses be another way to express who they are.",
     image: "/assets/persona-creator.webp",
     alt: "A child in plum cat-eye glasses smiling at a colourful cardboard creation on an art table",
     colour: "plum",
@@ -206,7 +227,7 @@ var PERSONAS = [
     name: "For the “what’s over there?” kid",
     headline: "Small footsteps.\nA world of firsts.",
     story:
-      "A pocket full of pebbles. A new path home. For the child who finds an expedition in an ordinary afternoon.",
+      "You see their independence growing. They see a path they haven’t tried yet. From today’s pocket full of pebbles to tomorrow’s possibilities, there is so much to discover.",
     image: "/assets/persona-adventurer.webp",
     alt: "A child in green glasses with a gentle outdoor tint exploring a leafy garden path",
     colour: "meadow",
