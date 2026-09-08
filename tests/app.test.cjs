@@ -157,3 +157,82 @@ test("mobile menu toggles and closes after route navigation", () => {
   assert.equal(d.querySelector("#app").getAttribute("tabindex"), "-1");
   close();
 });
+
+test("personality carousel changes stories, wraps and supports keyboard navigation", () => {
+  const { w, d, close } = boot("/");
+  assert.match(d.querySelector("#persona-panel").textContent, /Big questions/);
+  d.querySelector("#persona-next").click();
+  assert.equal(
+    d.querySelector("#persona-tab-sports").getAttribute("aria-selected"),
+    "true",
+  );
+  assert.match(
+    d.querySelector("#persona-panel").textContent,
+    /sports protection/,
+  );
+  d.querySelector("#persona-tab-sports").dispatchEvent(
+    new w.KeyboardEvent("keydown", { key: "End", bubbles: true }),
+  );
+  assert.equal(d.activeElement.id, "persona-tab-adventurer");
+  assert.match(d.querySelector("#persona-panel").textContent, /photochromic/);
+  d.querySelector("#persona-next").click();
+  assert.equal(
+    d.querySelector("#persona-tab-scientist").getAttribute("aria-selected"),
+    "true",
+  );
+  d.querySelector("#persona-prev").click();
+  assert.equal(d.querySelector("#persona-count").textContent, "04 / 04");
+  assert.equal(d.querySelectorAll('[role="tab"][tabindex="0"]').length, 1);
+  close();
+});
+
+test("each personality carries its exact frame and colour into the product flow", () => {
+  for (const [id, frame, colour] of [
+    ["scientist", "scholar", "midnight"],
+    ["sports", "explorer", "crystal-blue"],
+    ["creator", "stargazer", "plum"],
+    ["adventurer", "striker", "meadow"],
+  ]) {
+    const { w, d, close } = boot("/");
+    d.querySelector("#persona-tab-" + id).click();
+    d.querySelector(".persona-actions .btn").click();
+    assert.equal(w.location.pathname, "/frames/" + frame);
+    assert.equal(
+      d.querySelector('.sw[aria-pressed="true"]').dataset.color,
+      colour,
+    );
+    assert.match(
+      d.querySelector(".persona-pdp-note").textContent,
+      /lens|eyewear/i,
+    );
+    d.querySelector("#addBtn").click();
+    assert.equal(saved(w).cart[0].colorId, colour);
+    assert.equal(saved(w).cart[0].lensId, "standard");
+    close();
+  }
+});
+
+test("invalid colour links fall back to a colour stocked in the sample frame", () => {
+  const { w, d, close } = boot("/frames/scholar?colour=not-a-colour");
+  d.querySelector("#addBtn").click();
+  assert.equal(saved(w).cart[0].colorId, "midnight");
+  close();
+});
+
+test("horizontal carousel gesture changes slide and vertical gesture does not", () => {
+  const { w, d, close } = boot("/");
+  const gesture = (x, y) => {
+    const media = d.querySelector("#persona-swipe");
+    media.dispatchEvent(
+      new w.MouseEvent("pointerdown", { clientX: 200, clientY: 200 }),
+    );
+    media.dispatchEvent(
+      new w.MouseEvent("pointerup", { clientX: x, clientY: y }),
+    );
+  };
+  gesture(190, 100);
+  assert.equal(d.querySelector("#persona-count").textContent, "01 / 04");
+  gesture(100, 190);
+  assert.equal(d.querySelector("#persona-count").textContent, "02 / 04");
+  close();
+});

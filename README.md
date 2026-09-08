@@ -12,7 +12,7 @@ A parent-facing children's eyewear storefront and clinic-planning experience. Th
 
 | Route | Behaviour |
 |---|---|
-| `/` | Campaign, three parent entry routes, age discovery, featured frames, care/lens guidance, native FAQ disclosures |
+| `/` | Campaign, four-personality carousel (scientist, sport star, creator, adventurer), three parent entry routes, age discovery, featured frames, care/lens guidance, native FAQ disclosures |
 | `/frames` | Search, age-range overlap, style filters, price/name sorting and saved-only filter; clear empty state |
 | `/frames/:id` | Frame illustration, keyboard-accessible colours/lenses, price calculation, quantity and add to bag |
 | `/try-on?frame=id` | SKIDS-branded try-on introduction, explicit unavailable state, selected-frame favourite and clinic fitting route |
@@ -56,7 +56,7 @@ Keep the camera-denying Permissions-Policy until a reviewed partner integration 
 
 ## Content and launch dependencies
 
-- `public/assets/campaign.webp` is AI-generated concept campaign photography, depicting no actual patient or testimonial. It is not a photograph of an actual stocked frame. Replace it with consented/licensed brand photography when available.
+- `public/assets/campaign.webp` and `public/assets/persona-*.webp` are AI-generated concept campaign photographs, depicting no actual patient or testimonial. They depict imagined frame/lens looks, not exact stocked products or measured lens behaviour. Replace them with consented/licensed brand photography when available.
 - Frames are code-drawn **illustrative samples**, labelled as such. Prices are indicative; dimensions, stock, coatings, materials and warranties need verified supplier data.
 - Confirm real lens brands, lens pricing and clinical guidance before taking orders. No invented performance statistics, delivery promises, testimonials or partner logos are used.
 - Production checkout, payment, order tracking, appointment scheduling, authenticated records and secure upload require backend integrations. Current UI gives useful local planning and clinic-contact alternatives.
@@ -69,3 +69,9 @@ CLOUDFLARE_ACCOUNT_ID=27f2f514327f6ec9f477357f545b58af \
 ```
 
 Cloudflare `_redirects` provides SPA fallback. `_headers` retains the existing security controls.
+
+## Personality-led discovery
+
+The homepage starts eyewear discovery with interests: scientist, sport star, creator and adventurer. Each story has a separate campaign image, frame/colour direction and lens conversation. Children can explore every identity; the text does not assign careers or treatment based on appearance. Manual previous/next, horizontal image swipe, keyboard arrow/Home/End controls and an announced slide count support accessible browsing. No autoplay.
+
+“Explore this look” carries the frame and selected colour to the PDP. The matching context follows the parent, but no specialist lens is preselected by persona. Sports copy explicitly distinguishes ordinary glasses from protective sports eyewear.

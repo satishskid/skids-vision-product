@@ -40,3 +40,18 @@ Partner tenant/approved launch URL or SDK docs, authentication/session issuance,
 ## Verification
 
 19 jsdom regression tests passed. Browser checks at 320, 390, 768 and 1440 pixels covered navigation, catalog filters, page layout and the product-to-shopping-list flow. The 320px homepage headline overflow was corrected and rechecked; mobile and tablet document width matched the viewport. No JavaScript errors were captured in the browser. The real Oculfit SDK, payment, booking and records integrations remain outside the verified front-end scope.
+
+## Persona carousel extension
+
+User direction: move beyond a conventional frame-and-lens store to children wearing different looks as scientists, sports lovers, creators and adventurers, preserving “let kids be kids.”
+
+Implemented four editorial stories, distinct child campaign portraits, frame/colour links into the PDP and context-specific lens questions. These are interests to explore freely, not rigid types, gender assignments or diagnoses. No automatic rotation; keyboard tabs/arrows, previous/next controls and horizontal swipe. Actual lenses remain subject to prescription and optician review.
+
+Additional primary references, reviewed 8 September 2026:
+
+- American Academy of Pediatrics, “Does my child need eye protection for sports?” https://www.healthychildren.org/English/tips-tools/ask-the-pediatrician/Pages/does-my-child-need-eye-protection-for-sports.aspx — ordinary spectacles do not provide sports protection. Accordingly, the football portrait shows a child resting off the field, and its lens guidance directs parents to ask about protective eyewear. Publication date: not stated in the reviewed excerpt.
+- ZEISS, “PhotoFusion X Lenses” https://www.zeiss.com/vision-care/us/need-new-eyeglasses/photofusion-x.html — tint depends on temperature and UV conditions. Accordingly, the outdoor portrait is illustrative only, with no performance simulation or promised tint level. Publication date: not stated.
+
+Added regression coverage for carousel wraparound/keyboard focus, all four frame-and-colour handoffs, invalid colour fallback and horizontal versus vertical gestures.
+
+Final persona verification: 23 tests passed. Browser checks confirmed tab/arrow selection, next-slide control, loaded campaign imagery, creator-to-plum-PDP handoff, and no page overflow at 320px or 390px. All four generated assets were visually inspected and encoded as WebP; together they are about 552 KB, with carousel images requested lazily.

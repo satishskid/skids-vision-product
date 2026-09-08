@@ -1764,3 +1764,427 @@ footer {
     transition: none !important;
   }
 }
+
+/* Their interests lead; the frame and lens conversation follow. */
+.persona-section {
+  padding-top: 72px;
+  padding-bottom: 10px;
+  scroll-margin-top: 0;
+}
+.persona-section .section-heading {
+  margin-bottom: 27px;
+}
+.persona-section .section-heading h2 {
+  font-size: 42px;
+}
+.persona-section .section-heading > p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.persona-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid #bfc9b6;
+  margin-bottom: 24px;
+}
+.persona-tabs button {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 15px 8px 17px;
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.persona-tab-number {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  margin-right: 15px;
+  color: #859377;
+}
+.persona-tabs button[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+  font-weight: 600;
+}
+.persona-tabs button:hover {
+  background: #eef0e5;
+}
+.persona-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  background: #e9ecdf;
+  min-height: 540px;
+}
+.persona-image {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #ccd0b4;
+  touch-action: pan-y pinch-zoom;
+}
+.persona-image > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: 50% center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.persona-image figcaption {
+  position: absolute;
+  left: 25px;
+  bottom: 21px;
+  right: 25px;
+  color: white;
+  font-size: 11px;
+  text-shadow: 0 1px 10px #0009;
+  z-index: 1;
+}
+.persona-image:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(transparent, #12261a59);
+  pointer-events: none;
+}
+.persona-image-label {
+  position: absolute;
+  right: 23px;
+  top: 25px;
+  border: 1px solid #fff9;
+  border-radius: 50%;
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.12;
+  transform: rotate(8deg);
+  text-shadow: 0 1px 6px #0004;
+}
+.persona-story {
+  padding: 38px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.persona-story > .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.persona-story h3 {
+  font-size: 35px;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  font-weight: 500;
+}
+.persona-intro {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 17px 0 22px;
+  max-width: 365px;
+}
+.persona-frame {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 0;
+  border-top: 1px solid #233f342b;
+}
+.persona-frame > div:first-child {
+  display: flex;
+  align-items: center;
+}
+.persona-spec-label {
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  color: #52654d;
+  font-weight: 600;
+}
+.persona-frame h4,
+.persona-lens h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+.persona-frame p,
+.persona-lens p {
+  font-size: 11px;
+  line-height: 1.75;
+}
+.persona-lens {
+  padding-top: 15px;
+  border-top: 1px solid #233f342b;
+}
+.persona-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 23px;
+}
+.persona-actions .btn {
+  padding: 13px 20px;
+}
+.persona-actions .text-link {
+  font-size: 11px;
+}
+.persona-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 18px 0 0;
+}
+.persona-bottom > p {
+  font-size: 11px;
+}
+.persona-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+.persona-controls button {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #c8d0bc;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 19px;
+}
+.persona-controls button:hover {
+  background: var(--ink);
+  color: white;
+}
+#persona-count {
+  font-size: 11px;
+  min-width: 42px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.persona-footnote {
+  font-size: 10px;
+  color: var(--muted);
+  max-width: 830px;
+  margin-top: 15px;
+}
+.palette-ochre {
+  background: #f0e1c5;
+}
+.palette-rose {
+  background: #f0e2dc;
+}
+.palette-moss {
+  background: #dfe7d9;
+}
+.persona-pdp-note {
+  font-size: 12px;
+  background: #eaf0e2;
+  border-left: 2px solid #688059;
+  padding: 15px;
+  margin-top: 20px;
+}
+@media (max-width: 1050px) {
+  .persona-story {
+    padding: 30px;
+  }
+  .persona-story h3 {
+    font-size: 30px;
+  }
+  .persona-slide {
+    min-height: 570px;
+  }
+  .persona-tab-number {
+    margin-right: 10px;
+  }
+  .persona-tabs button {
+    font-size: 13px;
+  }
+  .persona-frame {
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+  }
+}
+@media (max-width: 800px) {
+  .persona-section {
+    padding-top: 45px;
+  }
+  .persona-section .section-heading h2 {
+    font-size: 35px;
+  }
+  .persona-story {
+    padding: 26px;
+  }
+  .persona-story h3 {
+    font-size: 28px;
+  }
+  .persona-tabs button {
+    font-size: 12px;
+  }
+  .persona-tab-number {
+    font-size: 11px;
+    margin-right: 6px;
+  }
+  .persona-slide {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+  .persona-frame {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .persona-frame > div:first-child {
+    display: none;
+  }
+  .persona-intro {
+    font-size: 12px;
+    margin: 14px 0 18px;
+  }
+  .persona-image-label {
+    right: 16px;
+    top: 18px;
+    width: 64px;
+    height: 64px;
+    font-size: 10px;
+  }
+  .persona-image figcaption {
+    font-size: 10px;
+    left: 18px;
+    right: 18px;
+  }
+}
+@media (max-width: 560px) {
+  .persona-section {
+    padding-top: 43px;
+  }
+  .persona-section .section-heading h2 {
+    font-size: 33px;
+  }
+  .persona-section .section-heading > p {
+    font-size: 12px;
+  }
+  .persona-tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    margin-bottom: 18px;
+    scrollbar-width: thin;
+  }
+  .persona-tabs button {
+    flex: none;
+    font-size: 11px;
+    padding: 13px 2px;
+  }
+  .persona-tab-number {
+    display: none;
+  }
+  .persona-slide {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .persona-image {
+    height: 330px;
+  }
+  .persona-image > img {
+    object-position: center 38%;
+  }
+  .persona-story {
+    padding: 27px;
+  }
+  .persona-story h3 {
+    font-size: 32px;
+  }
+  .persona-intro {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .persona-frame {
+    grid-template-columns: 83px 1fr;
+    gap: 13px;
+    padding: 14px 0;
+  }
+  .persona-frame > div:first-child {
+    display: flex;
+  }
+  .persona-frame h4,
+  .persona-lens h4 {
+    font-size: 12px;
+  }
+  .persona-frame p,
+  .persona-lens p {
+    font-size: 12px;
+  }
+  .persona-actions {
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .persona-actions .btn {
+    width: 100%;
+  }
+  .persona-actions .text-link {
+    font-size: 12px;
+  }
+  .persona-bottom {
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .persona-bottom > p {
+    font-size: 10px;
+    max-width: 155px;
+    padding-top: 5px;
+  }
+  .persona-controls {
+    gap: 10px;
+  }
+  .persona-controls button {
+    width: 37px;
+    height: 37px;
+  }
+  .persona-footnote {
+    font-size: 9px;
+  }
+  .persona-story > .eyebrow {
+    font-size: 9px;
+  }
+  .collection-section {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .persona-tabs {
+    gap: 12px;
+  }
+  .persona-tabs button {
+    font-size: 10px;
+  }
+  .persona-image {
+    height: 290px;
+  }
+  .persona-story {
+    padding: 22px;
+  }
+  .persona-story h3 {
+    font-size: 28px;
+  }
+  .persona-controls {
+    gap: 6px;
+  }
+  .persona-bottom > p {
+    max-width: 115px;
+  }
+}

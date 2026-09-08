@@ -137,3 +137,87 @@ var CATS = [
   { id: "playful", name: "Playful" },
   { id: "minimal", name: "Minimal" },
 ];
+
+/* Interest-led editorial stories, not clinical recommendations. */
+var PERSONAS = [
+  {
+    id: "scientist",
+    label: "The scientist",
+    name: "For the one who asks “why?”",
+    headline: "Big questions.\nBright little eyes.",
+    story:
+      "The leaf collector. The kitchen-table inventor. The kid with one more question, even after lights out.",
+    image: "/assets/persona-scientist.webp",
+    alt: "A curious child in navy rectangular glasses studying a leaf with a magnifying glass",
+    colour: "midnight",
+    frame: "scholar",
+    style: "classic",
+    frameNote: "A quiet, rectangular look for a very curious mind.",
+    lensTitle: "Clear lenses, everyday exploring",
+    lensNote:
+      "Ask about prescription lenses and an easy-to-clean coating. Curiosity doesn’t need a special lens.",
+    lensLink: "Talk about everyday lenses",
+    caption: "Today’s discovery: a whole world in one leaf.",
+    palette: "sage",
+  },
+  {
+    id: "sports",
+    label: "The sport star",
+    name: "For the “one more game” kid",
+    headline: "Big team spirit.\nTheir own little style.",
+    story:
+      "Always picking teams. Always cheering the loudest. And somehow, always finding time for one more game.",
+    image: "/assets/persona-sports.webp",
+    alt: "A smiling child in blue glasses holding a football while resting beside the playing field",
+    colour: "crystal-blue",
+    frame: "explorer",
+    style: "sporty",
+    frameNote: "A rounded blue frame with a playful, sporty feel.",
+    lensTitle: "Everyday glasses ≠ sports protection",
+    lensNote:
+      "This is a look for off the field. Ask your optician about protective sports eyewear for the games they play.",
+    lensLink: "Ask about sports eyewear",
+    caption: "Half-time. Full of stories.",
+    palette: "ochre",
+  },
+  {
+    id: "creator",
+    label: "The creator",
+    name: "For the beautifully messy maker",
+    headline: "A little colour.\nA lot of “I made this.”",
+    story:
+      "Paint on the fingers. Plans on every scrap of paper. The ordinary becomes something extraordinary around this kid.",
+    image: "/assets/persona-creator.webp",
+    alt: "A child in plum cat-eye glasses smiling at a colourful cardboard creation on an art table",
+    colour: "plum",
+    frame: "stargazer",
+    style: "playful",
+    frameNote: "A soft cat-eye shape. A colour with something to say.",
+    lensTitle: "Clear lenses for colourful days",
+    lensNote:
+      "Start with their prescription. Ask your optician about lens care and coatings for everyday fingerprints and smudges.",
+    lensLink: "Talk about lens care",
+    caption: "A masterpiece. According to its maker.",
+    palette: "rose",
+  },
+  {
+    id: "adventurer",
+    label: "The adventurer",
+    name: "For the “what’s over there?” kid",
+    headline: "Small footsteps.\nA world of firsts.",
+    story:
+      "A pocket full of pebbles. A new path home. For the child who finds an expedition in an ordinary afternoon.",
+    image: "/assets/persona-adventurer.webp",
+    alt: "A child in green glasses with a gentle outdoor tint exploring a leafy garden path",
+    colour: "meadow",
+    frame: "striker",
+    style: "sporty",
+    frameNote: "A compact green frame that feels right at home outside.",
+    lensTitle: "A conversation about changing light",
+    lensNote:
+      "Ask whether photochromic lenses suit their prescription and routine. Tint and performance vary with the lens and conditions.",
+    lensLink: "Explore outdoor lens options",
+    caption: "The long way home is the interesting one.",
+    palette: "moss",
+  },
+];

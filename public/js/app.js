@@ -258,9 +258,10 @@
   /* ---------- HOME ---------- */
   function homePage() {
     document.getElementById("footer").innerHTML = footerHTML();
-    app.innerHTML = `<header class="editorial-hero"><div class="hero-copy"><p class="eyebrow">SMALL FRAMES. BIG POSSIBILITIES.</p><h1>A world to see.<br>A pair to <em>love.</em></h1><p>Glasses they feel good in. Eye care you feel good about. Find a little more confidence in every pair.</p><div class="hero-actions"><a class="btn solid" data-route href="/frames">Find their frames <span>↗</span></a><a class="text-link" data-route href="/appointment">First pair? Start here →</a></div><div class="hero-foot"><span class="tiny-glasses">${frameSvg(FRAMES[2], "#294c3c", 65)}</span><span>Made for growing faces.<br><b>Chosen together, with care.</b></span></div></div><figure class="hero-photo"><img src="/assets/campaign.webp" alt="Campaign portrait of a smiling child wearing round orange glasses" fetchpriority="high" width="1536" height="1024"><figcaption>A little colour. A lot of personality.</figcaption><span class="photo-stamp">LET<br>KIDS<br>BE KIDS.</span></figure></header>
+    app.innerHTML = `<header class="editorial-hero"><div class="hero-copy"><p class="eyebrow">SMALL FRAMES. BIG POSSIBILITIES.</p><h1>A world to see.<br>A pair to <em>love.</em></h1><p>Glasses they feel good in. Eye care you feel good about. Find a little more confidence in every pair.</p><div class="hero-actions"><a class="btn solid" href="#personalities">Find their kind of frame <span>↓</span></a><a class="text-link" data-route href="/appointment">First pair? Start here →</a></div><div class="hero-foot"><span class="tiny-glasses">${frameSvg(FRAMES[2], "#294c3c", 65)}</span><span>Made for growing faces.<br><b>Chosen together, with care.</b></span></div></div><figure class="hero-photo"><img src="/assets/campaign.webp" alt="Campaign portrait of a smiling child wearing round orange glasses" fetchpriority="high" width="1536" height="1024"><figcaption>A little colour. A lot of personality.</figcaption><span class="photo-stamp">LET<br>KIDS<br>BE KIDS.</span></figure></header>
  <section class="entry-strip wrap" aria-label="Where would you like to start?"><a data-route href="/appointment?reason=screening"><span>01</span><div><b>A note came home from school?</b><small>Let’s make sense of the screening.</small></div><i>↗</i></a><a data-route href="/frames"><span>02</span><div><b>Ready for a new pair?</b><small>Find a look that feels like them.</small></div><i>↗</i></a><a data-route href="/appointment"><span>03</span><div><b>Just want their eyes checked?</b><small>A good place to start.</small></div><i>↗</i></a></section>
- <section class="collection-section wrap"><div class="section-heading"><div><p class="eyebrow">THE EVERYDAY COLLECTION</p><h2>For the way they see themselves.</h2></div><a class="text-link" data-route href="/frames">Explore all frames ↗</a></div><div class="age-links"><span>Find their starting size</span><a data-route href="/frames?age=4-7">Little ones <b>4–7</b> ↗</a><a data-route href="/frames?age=8-11">Growing explorers <b>8–11</b> ↗</a><a data-route href="/frames?age=12-14">Finding their own <b>12–14</b> ↗</a></div><div class="home-products">${[FRAMES[2], FRAMES[0], FRAMES[1], FRAMES[7]].map(productCard).join("")}</div><p class="catalog-note">A first look at our collection. Illustrative frames and indicative prices; final fit, availability and lens cost are confirmed with the clinic.</p></section>
+ ${personaCarouselHTML()}
+ <section class="collection-section wrap"><div class="section-heading"><div><p class="eyebrow">KEEP EXPLORING</p><h2>Different days. Different sides of them.</h2></div><a class="text-link" data-route href="/frames">Explore all frames ↗</a></div><div class="age-links"><span>Find their starting size</span><a data-route href="/frames?age=4-7">Little ones <b>4–7</b> ↗</a><a data-route href="/frames?age=8-11">Growing explorers <b>8–11</b> ↗</a><a data-route href="/frames?age=12-14">Finding their own <b>12–14</b> ↗</a></div><div class="home-products">${[FRAMES[2], FRAMES[0], FRAMES[1], FRAMES[7]].map(productCard).join("")}</div><p class="catalog-note">A first look at our collection. Illustrative frames and indicative prices; final fit, availability and lens cost are confirmed with the clinic.</p></section>
  <section class="try-banner wrap"><div class="try-art">${frameSvg(FRAMES[2], "#b1643b", 300)}<span>That’s so <em>you.</em></span><div class="try-colours"><i></i><i></i><i></i><i></i></div></div><div class="try-copy"><p class="eyebrow">A LITTLE DRESS-UP. A BIG DECISION.</p><h2>Let them have<br>the first look.</h2><p>Round and colourful? Quietly classic? Make a shortlist together, then let an optician help with the fit.</p><a class="btn solid" data-route href="/try-on">Explore virtual try-on ↗</a><small>At-home try-on is coming to SKIDS Vision.</small></div></section>
  <section class="care-section" id="care"><div class="wrap care-grid"><div><p class="eyebrow">THE CARE BEHIND THE PAIR</p><h2>You don’t need to<br>know all the answers.<br><em>That’s why we’re here.</em></h2><p>A school report. A first prescription. A pair that keeps slipping. Tell us where you are, and we’ll help with the next step.</p><a class="btn solid" data-route href="/appointment">Plan a clinic visit ↗</a></div><div class="care-steps"><article><span>01 / CHECK</span><h3>Start with their eyes.</h3><p>Bring their screening report or prescription. The clinic can help you understand what it means.</p></article><article><span>02 / CHOOSE</span><h3>Find their kind of comfortable.</h3><p>Choose a shape and colour together. Have the bridge, temples and lens position checked by an optician.</p></article><article><span>03 / KEEP IN TOUCH</span><h3>Make room for growing up.</h3><p>Ask when to return for a vision review, and who to contact if their glasses need adjusting.</p></article></div></div></section>
  <section class="lens-section wrap"><div class="section-heading"><div><p class="eyebrow">LET’S TALK LENSES</p><h2>The part you look through matters, too.</h2></div><p>Start with the prescription.<br>Choose the extras with an optician.</p></div><div class="lens-columns"><article><span class="lens-disc clear-lens"></span><h3>Everyday clarity</h3><p>Prescription lenses for their everyday pair. Ask about material, coating and total cost.</p></article><article><span class="lens-disc sun-lens"></span><h3>Inside. Outside.</h3><p>Photochromic lenses change tint with light conditions. Your optician can explain the options.</p></article><article><span class="lens-disc care-lens"></span><h3>When myopia needs a plan</h3><p>Myopia-management lenses are a separate clinical decision. Discuss suitability and follow-up at a vision appointment.</p></article></div><a class="text-link" data-route href="/appointment?reason=lenses">Get help choosing lenses →</a></section>
@@ -295,7 +296,124 @@
      "",
    )}</div></section><section class="closing-note"><p>More playground. More page-turning. More possibility.</p><h2>Here’s to seeing it all.</h2><a class="btn solid" data-route href="/frames">Find their pair ↗</a></section>`;
     wireProductCards(app);
+    wirePersonaCarousel();
   }
+  function personaCarouselHTML() {
+    return (
+      '<section class="persona-section wrap" id="personalities" aria-roledescription="carousel" aria-label="Eyewear for their kind of curious"><div class="section-heading"><div><p class="eyebrow">LET KIDS BE ALL KINDS OF KIDS.</p><h2>Who will they be today?</h2></div><p>A scientist before lunch. An adventurer after.<br>Find a look for every side of them.</p></div><div class="persona-tabs" role="tablist" aria-label="Explore their interests">' +
+      PERSONAS.map(function (p, i) {
+        return (
+          '<button id="persona-tab-' +
+          p.id +
+          '" type="button" role="tab" aria-selected="' +
+          (i === 0) +
+          '" aria-controls="persona-panel" tabindex="' +
+          (i === 0 ? "0" : "-1") +
+          '" data-persona="' +
+          i +
+          '"><span class="persona-tab-number">0' +
+          (i + 1) +
+          "</span>" +
+          p.label +
+          "</button>"
+        );
+      }).join("") +
+      '</div><div id="persona-panel" role="tabpanel" aria-labelledby="persona-tab-scientist" tabindex="0"></div><div class="persona-bottom"><p>Interests are for inspiration. Prescription and fit are personal.</p><div class="persona-controls"><button type="button" id="persona-prev" aria-label="Previous personality">←</button><span id="persona-count" role="status" aria-live="polite" aria-atomic="true"></span><button type="button" id="persona-next" aria-label="Next personality">→</button></div></div><p class="persona-footnote">Campaign imagery shows imagined looks, not exact stocked products or lens performance. Your optician confirms the frame, prescription and lens choice.</p></section>'
+    );
+  }
+  function wirePersonaCarousel() {
+    var index = 0,
+      tabs = $$("[data-persona]", app),
+      panel = $("#persona-panel", app);
+    function show(next, focusTab) {
+      index = (next + PERSONAS.length) % PERSONAS.length;
+      var p = PERSONAS[index],
+        f = frameById(p.frame),
+        c = colorById(p.colour);
+      tabs.forEach(function (tab, i) {
+        tab.setAttribute("aria-selected", String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+      });
+      panel.setAttribute("aria-labelledby", "persona-tab-" + p.id);
+      panel.innerHTML =
+        '<article class="persona-slide palette-' +
+        p.palette +
+        '"><figure class="persona-image" id="persona-swipe"><img src="' +
+        p.image +
+        '" alt="' +
+        p.alt +
+        '" width="1536" height="1024" loading="lazy"><figcaption>' +
+        p.caption +
+        '</figcaption><span class="persona-image-label">LET THEM<br>BE THEM.</span></figure><div class="persona-story"><p class="eyebrow">' +
+        p.name +
+        "</p><h3>" +
+        p.headline.split("\n").map(esc).join("<br>") +
+        '</h3><p class="persona-intro">' +
+        p.story +
+        '</p><div class="persona-frame"><div>' +
+        frameSvg(f, c.hex, 112) +
+        '</div><div><span class="persona-spec-label">THE FRAME MOOD</span><h4>' +
+        f.name +
+        " · " +
+        c.name +
+        "</h4><p>" +
+        p.frameNote +
+        '</p></div></div><div class="persona-lens"><span class="persona-spec-label">THE LENS CONVERSATION</span><h4>' +
+        p.lensTitle +
+        "</h4><p>" +
+        p.lensNote +
+        '</p></div><div class="persona-actions"><a class="btn solid" data-route href="/frames/' +
+        f.id +
+        "?colour=" +
+        p.colour +
+        "&persona=" +
+        p.id +
+        '">Explore this look ↗</a><a class="text-link" data-route href="/appointment?reason=lenses">' +
+        p.lensLink +
+        " →</a></div></div></article>";
+      $("#persona-count").textContent = "0" + (index + 1) + " / 04";
+      if (focusTab) tabs[index].focus({ preventScroll: true });
+      var start = null,
+        swipe = $("#persona-swipe");
+      swipe.addEventListener("pointerdown", function (e) {
+        start = { x: e.clientX, y: e.clientY };
+      });
+      swipe.addEventListener("pointerup", function (e) {
+        if (!start) return;
+        var dx = e.clientX - start.x,
+          dy = e.clientY - start.y;
+        start = null;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 2)
+          show(index + (dx < 0 ? 1 : -1), false);
+      });
+      swipe.addEventListener("pointercancel", function () {
+        start = null;
+      });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.onclick = function () {
+        show(i, false);
+      };
+      tab.onkeydown = function (e) {
+        var next;
+        if (e.key === "ArrowRight") next = index + 1;
+        else if (e.key === "ArrowLeft") next = index - 1;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = PERSONAS.length - 1;
+        else return;
+        e.preventDefault();
+        show(next, true);
+      };
+    });
+    $("#persona-prev").onclick = function () {
+      show(index - 1, false);
+    };
+    $("#persona-next").onclick = function () {
+      show(index + 1, false);
+    };
+    show(0, false);
+  }
+
   function productCard(f) {
     var saved = S.wishlist.indexOf(f.id) >= 0;
     return (
@@ -443,7 +561,10 @@
   /* ---------- PDP ---------- */
   function pdpPage(f) {
     document.getElementById("footer").innerHTML = footerHTML();
-    var color = colorById(f.colors[0]);
+    var requestedColour = new URLSearchParams(location.search).get("colour");
+    var color = colorById(
+      f.colors.includes(requestedColour) ? requestedColour : f.colors[0],
+    );
     var sel = { colorId: color.id, lensId: "standard", qty: 1 };
     app.innerHTML =
       '<div class="page"><div class="wrap">' +
@@ -480,7 +601,7 @@
         .map(function (c, ci) {
           return (
             '<button type="button" class="sw' +
-            (ci === 0 ? " on" : "") +
+            (c === color.id ? " on" : "") +
             '" data-color="' +
             c +
             '" style="background:' +
@@ -490,7 +611,7 @@
             '" aria-label="' +
             colorById(c).name +
             '" aria-pressed="' +
-            (ci === 0) +
+            (c === color.id) +
             '"></button>'
           );
         })
@@ -531,6 +652,18 @@
       "</b></div>" +
       "</div>" +
       "</div></div></div>";
+    var fromPersona = PERSONAS.find(function (p) {
+      return (
+        p.id === new URLSearchParams(location.search).get("persona") &&
+        p.frame === f.id
+      );
+    });
+    if (fromPersona) {
+      var note = document.createElement("p");
+      note.className = "persona-pdp-note";
+      note.textContent = fromPersona.lensTitle + ". " + fromPersona.lensNote;
+      $(".opts", app).before(note);
+    }
     function lineTotal() {
       return (f.price + lensById(sel.lensId).price) * sel.qty;
     }
