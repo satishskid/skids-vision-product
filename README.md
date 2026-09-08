@@ -68,6 +68,8 @@ CLOUDFLARE_ACCOUNT_ID=27f2f514327f6ec9f477357f545b58af \
   npx wrangler pages deploy public --project-name skids-vision --branch main
 ```
 
+Before deploying changed CSS or JavaScript, refresh the `?v=` values in `public/index.html` with the first 12 characters of each asset’s SHA-256 hash. This prevents returning browsers from combining a new page shell with stale scripts or styles.
+
 Cloudflare `_redirects` provides SPA fallback. `_headers` retains the existing security controls.
 
 ## Personality-led discovery
