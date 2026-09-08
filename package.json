@@ -1,0 +1,11 @@
+{
+  "name": "skids-vision",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/app.test.cjs",
+    "dev": "python3 scripts/serve.py"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}
