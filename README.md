@@ -2,7 +2,17 @@
 
 A parent-facing children's eyewear storefront and clinic-planning experience. The redesign starts with personality, frame discovery and clear next steps after a school screening.
 
-**Live:** https://vision.skids.clinic · https://skids-vision.pages.dev
+**Live:** [vision.skids.clinic](https://vision.skids.clinic) · [Cloudflare Pages](https://skids-vision.pages.dev)
+
+**Repository:** [satishskid/skids-vision-product](https://github.com/satishskid/skids-vision-product) · branch `main`
+
+## Phase status — 8 September 2026
+
+The design and working sample experience are complete and deployed for this phase. The core message is **“Big dreams. In clear sight.”** and the belief that **every kid is already smart and super**. The experience connects children’s personalities and parents’ hopes with frame discovery, lens understanding, precise fitting and continuing care.
+
+**Oculfit integration is deliberately deferred**, as agreed with the user. Its measurement and QR workflows inform the concept; connecting a partner account is future work, not a blocker to this design phase. Checkout and appointment tools remain clearly labelled local planning flows until real services are connected.
+
+The most recent application deployment is commit `fe270a0`, published to [this deployment](https://9acf07f2.skids-vision.pages.dev) and the live domains above. Subsequent documentation-only commits do not require redeploying `public/`.
 
 ## Research and plan
 
@@ -38,11 +48,15 @@ npm run dev
 # http://127.0.0.1:8080, including direct SPA routes
 ```
 
-The dev-only jsdom suite checks route rendering, combined filters, saved-only empty state, persistence, cart quantity/price calculations, draft saving, prescription validation and non-persistence, appointment-plan semantics, try-on privacy and mobile menu behaviour. Browser checks cover actual responsive layout and the product-to-list flow.
+The dev-only jsdom suite contains 26 checks covering route rendering, combined filters, saved-only empty state, persistence, cart quantity/price calculations, draft saving, prescription validation and non-persistence, appointment-plan semantics, try-on privacy and mobile menu behaviour. It also covers carousel wrapping, keyboard/swipe controls, all five persona-to-frame/colour handoffs, vision-system tabs, sample-look saving and clear/tint selection.
+
+Browser review covered desktop and narrow mobile layouts, the product-to-list flow, the new care diagrams and the mobile showroom. Production verification confirmed the updated hero, all five personality controls, the doctor photograph, four vision tabs and showroom controls. Tests exercise the static application; they do not certify clinical measurements, partner services or a commerce backend.
 
 ## Oculfit white-label integration
 
 The user confirmed that SKIDS has **signed up with Oculfit**. Public-facing copy uses **SKIDS Virtual Try-on**. The old manual overlay and simulated PD measurement have been removed.
+
+The supplied QR integration diagram and measurement video were reviewed; see [Oculfit concept and integration notes](docs/oculfit-integration.md). They demonstrate an operator-assisted fitting workflow with frame data, front/side captures and measurement review. They do not specify a working consumer try-on launch flow or QR payload contract. Integration is deferred by agreement.
 
 No public SDK contract or authenticated partner tenant was supplied. The current route provides an interactive sample showroom and makes no camera request. A paid/signed-up account alone does not establish a working site integration. To activate the real service, obtain:
 
@@ -82,3 +96,42 @@ The homepage starts with parental hopes and the belief that every kid is already
 ## Why SKIDS Vision
 
 An interactive, dark-green product-explainer section moves from the eye’s light path, through lens-design considerations and fitting positions, to everyday life. Original SVG diagrams are educational simplifications, not measurements or diagnostic tools. Lens plates are expressly separate design considerations rather than literal physical layers. The care section explains pediatrician, optometrist and pediatric ophthalmology partner roles and continuing reviews. Primary references are recorded in `docs/design-research.md`.
+
+
+## Project map
+
+| File or directory | Purpose |
+|---|---|
+| `public/index.html` | SPA shell, fonts and versioned asset references |
+| `public/js/app.js` | Routing, page templates, interactions and local state |
+| `public/js/data.js` | Sample frames, colours, lenses and five personality stories |
+| `public/css/app.css` | Editorial visual system, responsive layouts and interactive section styling |
+| `public/assets/` | Hero and five personality campaign images |
+| `public/_redirects` | Cloudflare SPA route fallback |
+| `public/_headers` | Browser security headers and disabled camera/microphone/geolocation permissions |
+| `scripts/serve.py` | Local Python server with SPA fallback |
+| `scripts/version-assets.py` | Refreshes CSS/JS content hashes in the shell |
+| `tests/app.test.cjs` | Application behaviour checks using jsdom |
+| `docs/design-research.md` | Audience, references, rationale and research limitations |
+| `docs/oculfit-integration.md` | Supplied partner concepts, observed workflow and future handoff requirements |
+
+## Maintaining and publishing changes
+
+Requires Node.js/npm for tests and Wrangler, Python 3 for the local server and asset versioning, and an authenticated Cloudflare account with access to the Pages project. There are no application secrets required to run this static version.
+
+1. Edit the relevant data, templates, styles or assets. Preserve the distinction between illustrative products and verified stock.
+2. Run `npm test`. Review affected screens in the browser, including a narrow mobile viewport.
+3. Run `npm run prepare:assets` after the final CSS/JS changes, then `git diff --check`.
+4. Review `git diff`, commit the intended files and run `git push origin main`.
+5. For application changes, run the Cloudflare deploy command above. A Git push alone is not proof of deployment; verify the live site after Wrangler completes.
+
+`node_modules/`, `.wrangler/` and `.DS_Store` are excluded from Git. Keep credentials, patient data and partner account exports out of the repository. The partner references are documented as evidence; the supplied PDF and video are not republished as site assets.
+
+## Next phase, when ready
+
+- Replace sample catalogue information with verified frame SKUs, dimensions, imagery, availability and lens pricing.
+- Connect the agreed Oculfit module using its actual tenant documentation and confirmed frame mapping.
+- Add real appointment availability/confirmation, commerce and payments only with their backend services.
+- Add authenticated clinical records and any consented image handling as a separately scoped integration.
+
+Until then, the published experience remains useful for discovering styles, understanding care, saving a shortlist and preparing a clinic visit.
